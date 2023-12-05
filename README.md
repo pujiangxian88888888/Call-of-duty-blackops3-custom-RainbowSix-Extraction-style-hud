@@ -25,6 +25,8 @@ in your mapname.zone,add include,r6e_hud
 
 Download image files from DEVRAW,put the "_custom" folder in you game root;
 
+in ROOT/zone_source/all/assetlist,find file zm_common.csv,in line 1010,find "image,hit_direction_zm",delete or comment it;
+
 To check this hud installed successful or not:
 
 open APE,search GDT "c_r6e_hud",if it exsits and contains all image files,it means you have installed it correctly.
