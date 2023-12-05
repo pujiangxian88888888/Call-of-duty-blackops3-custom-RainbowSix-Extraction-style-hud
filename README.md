@@ -3,7 +3,7 @@ This is a custom hud for Call of Duty Black OPS 3,Based on Kingslayer Kyle's LUA
 
 FOR COPYRIGHT,I CANNOT PUBSLISH IMAGES AND FONTS ON GITHUB,YOU CAN DOWNLOAD THESE FILES AT DEVRAW
 
-FIRST YOU MUST DOWNLOAD L3akMod from https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html and install it ,OR THE MOD TOOLS CANNOT COMPILES THE LUA FILE!(console will show "lua not support")
+FIRST YOU MUST DOWNLOAD L3akMod from https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html and install it ,OR THE MOD TOOL CANNOT COMPILES LUA FILES!(console will show "lua not support")
 
 Put file "converter_gdt_dirs_0.txt" in ROOT/bin;
 Put file "c_r6e_hud.gdt" in ROOT/source_data;
@@ -14,6 +14,7 @@ Create a new folder named "fonts" in ROOT/usermaps/zm_yourmap,and put all font f
 
 in your mapname.gsc, add #using scripts/zm/_zm_r6e_hud; and #using scripts/zm/_zm_r6ehud_hitmarks; in your preprocessor;
 in your mapname.csc, add #using scripts/zm/_zm_r6e_hud; in your preprocessor;
+in your mapname.zone,add include,r6e_hud
 
 Download image files from DEVRAW,put the "_custom" folder in you game root;
 
