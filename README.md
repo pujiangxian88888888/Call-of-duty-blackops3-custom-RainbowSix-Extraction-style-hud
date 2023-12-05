@@ -27,6 +27,10 @@ Download image files from DEVRAW,put the "_custom" folder in you game root;
 
 in ROOT/zone_source/all/assetlist,find file zm_common.csv,in line 1010,find "image,hit_direction_zm",delete or comment it;
 
+To show zone name on your hud,open radiant find your player_volume,add a kvp script_string,the value is your zone name;
+![image](https://github.com/pujiangxian88888888/Call-of-duty-blackops3-custom-RainbowSix-Extraction-style-hud/assets/66179474/8340e305-0522-4021-a008-5743bbd7f966)
+
+
 To check this hud installed successful or not:
 
 open APE,search GDT "c_r6e_hud",if it exsits and contains all image files,it means you have installed it correctly.
