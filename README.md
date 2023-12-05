@@ -2,7 +2,9 @@
 This is a custom hud for Call of Duty Black OPS 3,Based on Kingslayer Kyle's LUA code
 
 FOR COPYRIGHT,I CANNOT PUBSLISH IMAGES AND FONTS ON GITHUB,YOU CAN DOWNLOAD THESE FILES AT DEVRAW
-*******install*******
+
+FIRST YOU MUST DOWNLOAD L3akMod from https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html and install it ,OR THE MOD TOOLS CANNOT COMPILES THE LUA FILE!(console will show "lua not support")
+
 Put file "converter_gdt_dirs_0.txt" in ROOT/bin;
 Put file "c_r6e_hud.gdt" in ROOT/source_data;
 Put "ui" folder in ROOT/usermaps/zm_yourmap;
