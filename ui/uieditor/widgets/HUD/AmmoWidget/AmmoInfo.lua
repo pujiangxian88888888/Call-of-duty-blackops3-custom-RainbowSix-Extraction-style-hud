@@ -40,13 +40,14 @@ CoD.AmmoInfo.new = function ( menu, controller )
 
 	--双持武器另一把弹匣内的弹药
 	self.AmmoClipDW = LUI.UIText.new()
-	self.AmmoClipDW:setLeftRight( false, true, -122, -30 )
-	self.AmmoClipDW:setTopBottom( false, true, -72, -47 )
+	self.AmmoClipDW:setLeftRight( false, true, -475, -383 )
+	self.AmmoClipDW:setTopBottom( false, true, -70, -35 )
     self.AmmoClipDW:setTTF( "fonts/Erbaum_Bold.ttf" )
 	self.AmmoClipDW:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
-	self.AmmoClip:setScale(1.5)
+	self.AmmoClipDW:setScale( 1.5 )
 	self.AmmoClipDW:subscribeToGlobalModel( controller, "CurrentWeapon", "ammoInDWClip", function ( modelRef )
 		if Engine.GetModelValue( modelRef ) then
+
 			if IsLowAmmoDWClip( controller ) then
 				self.AmmoClipDW:setRGB( 1, 0.33, 0.33 )
 			else
@@ -75,11 +76,7 @@ CoD.AmmoInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
-				
-				--self.AmmoDivider:completeAnimation()
-				--self.AmmoDivider:setAlpha( 1 )
-				--self.clipFinished( self.AmmoDivider, {} )
-	
+		
 				self.AmmoClip:completeAnimation()
 				self.AmmoClip:setAlpha( 1 )
 				self.AmmoClip:setLeftRight( false, true, -415, -323 )
@@ -173,11 +170,13 @@ CoD.AmmoInfo.new = function ( menu, controller )
 	
 				self.AmmoClip:completeAnimation()
 				self.AmmoClip:setAlpha( 1 )
-				self.AmmoClip:setLeftRight( false, true, -94, -2 )
-				self.AmmoClip:setTopBottom( false, true, -72, -47 )
+				self.AmmoClip:setScale( 1.5 )
+				self.AmmoClip:setLeftRight( false, true, -415, -323 )
+				self.AmmoClip:setTopBottom( false, true, -70, -35 )
 				self.clipFinished( self.AmmoClip, {} )
 				
 				self.AmmoClipDW:completeAnimation()
+				self.AmmoClipDW:setScale( 1.5 )
 				self.AmmoClipDW:setAlpha( 1 )
 				self.clipFinished( self.AmmoClipDW, {} )
 				

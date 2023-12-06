@@ -14,6 +14,7 @@ CoD.ClientScore.new = function ( menu, controller )
 	self:setTopBottom( true, false, 0, 720 )
 	self.anyChildUsesUpdateState = true
 	
+	--待改
 	self.ScoreBG = LUI.UIImage.new()
 	self.ScoreBG:setLeftRight( true, false, 25, 153.5 )
 	self.ScoreBG:setTopBottom( false, true, -172.5, -114.5 )
@@ -28,25 +29,25 @@ CoD.ClientScore.new = function ( menu, controller )
 	self.PortraitImage:linkToElementModel( self, "zombiePlayerIcon", true, function ( modelRef )
 		if Engine.GetModelValue( modelRef ) then
 			if Engine.GetModelValue( modelRef ) == "uie_t7_zm_hud_score_char1" then
-				self.PortraitImage:setImage( RegisterImage( "ui_icon_hero_portrait_draft_nikolai" ) )
+				self.PortraitImage:setImage( RegisterImage( "ui_icon_hero_portrait_draft_sakuya" ) )
 
 			elseif Engine.GetModelValue( modelRef ) == "uie_t7_zm_hud_score_char1_old" then
 				self.PortraitImage:setImage( RegisterImage( "ui_icon_specialist_portrait_nikolai_ultimus" ) )
 
 			elseif Engine.GetModelValue( modelRef ) == "uie_t7_zm_hud_score_char2" then
-				self.PortraitImage:setImage( RegisterImage( "ui_icon_hero_portrait_draft_takeo" ) )
+				self.PortraitImage:setImage( RegisterImage( "ui_icon_hero_portrait_draft_marisa" ) )
 
 			elseif Engine.GetModelValue( modelRef ) == "uie_t7_zm_hud_score_char2_old" then
 				self.PortraitImage:setImage( RegisterImage( "ui_icon_specialist_portrait_takeo_ultimus" ) )
 
 			elseif Engine.GetModelValue( modelRef ) == "uie_t7_zm_hud_score_char3" then
-				self.PortraitImage:setImage( RegisterImage( "ui_icon_hero_portrait_draft_dempsey" ) )
+				self.PortraitImage:setImage( RegisterImage( "ui_icon_hero_portrait_draft_reisen" ) )
 
 			elseif Engine.GetModelValue( modelRef ) == "uie_t7_zm_hud_score_char3_old" then
 				self.PortraitImage:setImage( RegisterImage( "ui_icon_specialist_portrait_dempsey_ultimus" ) )
 
 			elseif Engine.GetModelValue( modelRef ) == "uie_t7_zm_hud_score_char4" then
-				self.PortraitImage:setImage( RegisterImage( "ui_icon_hero_portrait_draft_richtofen" ) )
+				self.PortraitImage:setImage( RegisterImage( "ui_icon_hero_portrait_draft_reimu" ) )
 
 			elseif Engine.GetModelValue( modelRef ) == "uie_t7_zm_hud_score_char4_old" then
 				self.PortraitImage:setImage( RegisterImage( "ui_icon_specialist_portrait_richtofen_ultimus" ) )
@@ -82,7 +83,7 @@ CoD.ClientScore.new = function ( menu, controller )
 	self.ScoreText = LUI.UIText.new()
 	self.ScoreText:setLeftRight( true, false, 64, 150.5 )
 	self.ScoreText:setTopBottom( false, true, -150, -135 )
-	self.ScoreText:setTTF( "fonts/skorzhen.ttf" )
+	self.ScoreText:setTTF( "fonts/Erbaum_Bold.ttf" )
 	self.ScoreText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	self.ScoreText:linkToElementModel( self, "clientNum", true, function ( modelRef )
 		if Engine.GetModelValue( modelRef ) then

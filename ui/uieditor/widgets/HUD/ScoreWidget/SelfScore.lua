@@ -136,7 +136,7 @@ CoD.SelfScore.new = function ( menu, controller )
 	self.HealthBar:setShaderVector( 1, 0, 0, 0, 0 )
 	self.HealthBar:setShaderVector( 2, 1, 0, 0, 0 )
 	self.HealthBar:setShaderVector( 3, 0, 0, 0, 0 )
-	self.HealthBar:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "T8.Health" ), function ( modelRef )
+	self.HealthBar:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "Health" ), function ( modelRef )
 		if Engine.GetModelValue( modelRef ) then
 			if Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.perks.juggernaut" ) ) ~= nil then
 				if Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.perks.juggernaut" ) ) > 0 then
@@ -181,7 +181,7 @@ CoD.SelfScore.new = function ( menu, controller )
 	self.HealthText:setTopBottom( false, true, -50, -20 )
 	self.HealthText:setTTF( "fonts/Erbaum_Bold.ttf" )
 	self.HealthText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
-	self.HealthText:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "T8.Health" ), function ( modelRef )
+	self.HealthText:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "Health" ), function ( modelRef )
 		if Engine.GetModelValue( modelRef ) then
 			self.HealthText:setText( Engine.Localize( Engine.GetModelValue( modelRef ) ) )
 		end

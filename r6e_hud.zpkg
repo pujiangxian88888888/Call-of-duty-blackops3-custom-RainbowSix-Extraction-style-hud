@@ -39,7 +39,6 @@ material,r6e_hitmarker_death
 
 // IMAGES
 image,hit_direction_zm
-image,ui_icon_frag
 image,ui_icon_health_bar
 image,ui_icon_health_bar_bg
 image,ui_icon_hero_portrait_draft_marisa
@@ -51,7 +50,6 @@ image,ui_icon_hero_weapon_progress
 image,ui_icon_infinite_ammo
 image,ui_icon_key_prompt_bg
 image,ui_icon_lefttop_dotline
-image,ui_icon_monkeybomb
 image,ui_icon_perks_berserker
 image,ui_icon_perks_cherry
 image,ui_icon_perks_deadshot
@@ -64,17 +62,15 @@ image,ui_icon_perks_speedcola
 image,ui_icon_perks_spider
 image,ui_icon_perks_staminup
 image,ui_icon_player_icon_bg
-image,ui_icon_riotshield
-image,ui_icon_riotshield_health_bar
 image,ui_icon_self_player_down
-image,ui_icon_semtex
 image,ui_icon_teamplayer_icon_bg
-image,ui_icon_tripmine
-image,ui_icon_zm_aat_blastfurnace
-image,ui_icon_zm_aat_deadwire
-image,ui_icon_zm_aat_fireworks
-image,ui_icon_zm_aat_thunderwall
-image,ui_icon_zm_aat_turned
+image,ui_icon_frag_grenade
+image,ui_icon_glue_grenade
+image,ui_icon_aura_grenade
+image,ui_icon_claymore
+image,ui_icon_vest
+image,ui_icon_vest_health_bar
+
 
 
 

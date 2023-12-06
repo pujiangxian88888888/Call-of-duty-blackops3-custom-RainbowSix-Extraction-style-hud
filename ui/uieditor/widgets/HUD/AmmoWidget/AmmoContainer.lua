@@ -60,38 +60,76 @@ CoD.AmmoContainer.new = function ( menu, controller )
 	self.AmmoEquipment:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.AmmoEquipment )
 
-	self.AATIcon = LUI.UIImage.new()
-	self.AATIcon:setLeftRight( false, true, -427, -396.5 )
-	self.AATIcon:setTopBottom( false, true, -73, -36 )
-	self.AATIcon:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
-	self.AATIcon:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "CurrentWeapon.aatIcon" ), function ( modelRef )
+	--[[
+	self.AATName = LUI.UIImage.new()
+	self.AATName:setLeftRight( false, true, -447, -416.5 )
+	self.AATName:setTopBottom( false, true, -73, -36 )
+	self.AATName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
+	self.AATName:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "CurrentWeapon.AATName" ), function ( modelRef )
 		if Engine.GetModelValue( modelRef ) then
 			if Engine.GetModelValue( modelRef ) == "t7_icon_zm_aat_blast_furnace" then
-				self.AATIcon:setImage( RegisterImage( "ui_icon_zm_aat_blastfurnace" ) )
-				self.AATIcon:setScale(1.5)
+				self.AATName:setImage( RegisterImage( "ui_icon_zm_aat_blastfurnace" ) )
+				self.AATName:setScale(1.5)
 
 			elseif Engine.GetModelValue( modelRef ) == "t7_icon_zm_aat_dead_wire" then
-				self.AATIcon:setImage( RegisterImage( "ui_icon_zm_aat_deadwire" ) )
-				self.AATIcon:setScale(1.5)
+				self.AATName:setImage( RegisterImage( "ui_icon_zm_aat_deadwire" ) )
+				self.AATName:setScale(1.5)
 
 			elseif Engine.GetModelValue( modelRef ) == "t7_icon_zm_aat_fire_works" then
-				self.AATIcon:setImage( RegisterImage( "ui_icon_zm_aat_fireworks" ) )
-				self.AATIcon:setScale(1.5)
+				self.AATName:setImage( RegisterImage( "ui_icon_zm_aat_fireworks" ) )
+				self.AATName:setScale(1.5)
 
 			elseif Engine.GetModelValue( modelRef ) == "t7_icon_zm_aat_thunder_wall" then
-				self.AATIcon:setImage( RegisterImage( "ui_icon_zm_aat_thunderwall" ) )
-				self.AATIcon:setScale(1.5)
+				self.AATName:setImage( RegisterImage( "ui_icon_zm_aat_thunderwall" ) )
+				self.AATName:setScale(1.5)
 
 			elseif Engine.GetModelValue( modelRef ) == "t7_icon_zm_aat_turned" then
-				self.AATIcon:setImage( RegisterImage( "ui_icon_zm_aat_turned" ) )
-				self.AATIcon:setScale(1.5)
+				self.AATName:setImage( RegisterImage( "ui_icon_zm_aat_turned" ) )
+				self.AATName:setScale(1.5)
 
 			else
-				self.AATIcon:setImage( RegisterImage( "blacktransparent" ) )
+				self.AATName:setImage( RegisterImage( "blacktransparent" ) )
 			end
 		end  
 	end )
-	self:addElement( self.AATIcon )
+	self:addElement( self.AATName )
+	]]
+
+	self.AATName = LUI.UIText.new()
+	self.AATName:setLeftRight( false, true, -635, -205 )
+	self.AATName:setTopBottom( false, true, -85, -65 )
+	self.AATName:setTTF( "fonts/Scout.ttf" )
+	self.AATName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
+	self.AATName:setScale( 0.8 )
+	self.AATName:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "CurrentWeapon.aatIcon" ), function ( modelRef )
+		if Engine.GetModelValue( modelRef ) then
+			if Engine.GetModelValue( modelRef ) == "t7_icon_zm_aat_blast_furnace" then
+				self.AATName:setText( Engine.Localize( "BLAST FURNACE" ) )
+				
+
+			elseif Engine.GetModelValue( modelRef ) == "t7_icon_zm_aat_dead_wire" then
+				self.AATName:setText( Engine.Localize( "DEAD WIRE" ) )
+				
+
+			elseif Engine.GetModelValue( modelRef ) == "t7_icon_zm_aat_fire_works" then
+				self.AATName:setText( Engine.Localize( "FIRE WORKS" ) )
+				
+
+			elseif Engine.GetModelValue( modelRef ) == "t7_icon_zm_aat_thunder_wall" then
+				self.AATName:setText( Engine.Localize( "THUNDER WALL" ) )
+				
+
+			elseif Engine.GetModelValue( modelRef ) == "t7_icon_zm_aat_turned" then
+				self.AATName:setText( Engine.Localize( "TURNED" ) )
+				
+
+			else
+				self.AATName:setText( Engine.Localize( "" ) )
+			end
+		end  
+	end )
+	self:addElement( self.AATName )
+
 	
 
 	self.clipsPerState = {
@@ -119,9 +157,9 @@ CoD.AmmoContainer.new = function ( menu, controller )
 				self.AmmoEquipment:setAlpha( 0 )
 				self.clipFinished( self.AmmoEquipment, {} )
 
-				self.AATIcon:completeAnimation()
-				self.AATIcon:setAlpha( 0 )
-				self.clipFinished( self.AATIcon, {} )
+				self.AATName:completeAnimation()
+				self.AATName:setAlpha( 0 )
+				self.clipFinished( self.AATName, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 17 )
@@ -174,9 +212,9 @@ CoD.AmmoContainer.new = function ( menu, controller )
 				self.AmmoEquipment:setAlpha( 0 )
 				HudStartTransition( self.AmmoEquipment, {} )
 				
-				self.AATIcon:completeAnimation()
-				self.AATIcon:setAlpha( 0 )
-				HudStartTransition( self.AATIcon, {} )
+				self.AATName:completeAnimation()
+				self.AATName:setAlpha( 0 )
+				HudStartTransition( self.AATName, {} )
 			end
 		},
 		HudStart = {
@@ -203,9 +241,9 @@ CoD.AmmoContainer.new = function ( menu, controller )
 				self.AmmoEquipment:setAlpha( 1 )
 				self.clipFinished( self.AmmoEquipment, {} )
 
-				self.AATIcon:completeAnimation()
-				self.AATIcon:setAlpha( 1 )
-				self.clipFinished( self.AATIcon, {} )
+				self.AATName:completeAnimation()
+				self.AATName:setAlpha( 1 )
+				self.clipFinished( self.AATName, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 17 )
@@ -244,9 +282,9 @@ CoD.AmmoContainer.new = function ( menu, controller )
 				self.AmmoEquipment:setAlpha( 1 )
 				DefaultStateTransition( self.AmmoEquipment, {} )
 
-				self.AATIcon:completeAnimation()
-				self.AATIcon:setAlpha( 1 )
-				DefaultStateTransition( self.AATIcon, {} )
+				self.AATName:completeAnimation()
+				self.AATName:setAlpha( 1 )
+				DefaultStateTransition( self.AATName, {} )
 			end
 		}
 	}
@@ -422,7 +460,7 @@ CoD.AmmoContainer.new = function ( menu, controller )
 		element.AmmoInfo:close()
 		element.WeaponName:close()
 		element.AmmoEquipment:close()
-		element.AATIcon:close()
+		element.AATName:close()
 
 	end )
 	

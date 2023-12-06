@@ -23,14 +23,14 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 	self.LethalImage:setTopBottom( false, true, -95, -7.5 )
 	--上下：两个参数同时下降，对象往上移动
 	self.LethalImage:setImage( RegisterImage( "blacktransparent" ) )
-	self.LethalImage:setScale( 0.3 )
+	self.LethalImage:setScale( 0.38 )
 		
 	self.LethalImage:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "currentPrimaryOffhand.primaryOffhand" ), function ( modelRef )
 		if Engine.GetModelValue( modelRef ) then
 			if Engine.GetModelValue( modelRef ) == "uie_t7_zm_hud_inv_icnlthl" then
-				self.LethalImage:setImage( RegisterImage( "ui_icon_frag" ) )
+				self.LethalImage:setImage( RegisterImage( "ui_icon_frag_grenade" ) )
 			elseif Engine.GetModelValue( modelRef ) == "uie_t7_zm_hud_inv_widowswine" then
-				self.LethalImage:setImage( RegisterImage( "ui_icon_semtex" ) )
+				self.LethalImage:setImage( RegisterImage( "ui_icon_glue_grenade" ) )
 			else
 				self.LethalImage:setImage( RegisterImage( Engine.GetModelValue( modelRef ) ) )
 			end
@@ -108,13 +108,13 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 	--战术装备的图标
 	self.TacticalImage = LUI.UIImage.new()
 	self.TacticalImage:setLeftRight( false, true, -212, -168.5 )
-	self.TacticalImage:setTopBottom( false, true, -86.5, -18 )
+	self.TacticalImage:setTopBottom( false, true, -75, -27.5 )
 	self.TacticalImage:setImage( RegisterImage( "blacktransparent" ) )
-	self.TacticalImage:setScale( 0.45 )
+	self.TacticalImage:setScale( 0.8 )
 	self.TacticalImage:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "CurrentSecondaryOffhand.secondaryOffhand" ), function ( modelRef )
 		if Engine.GetModelValue( modelRef ) then
 			if Engine.GetModelValue( modelRef ) == "hud_cymbal_monkey_bo3" then
-				self.TacticalImage:setImage( RegisterImage( "ui_icon_monkeybomb" ) )
+				self.TacticalImage:setImage( RegisterImage( "ui_icon_aura_grenade" ) )
 			else
 				self.TacticalImage:setImage( RegisterImage( Engine.GetModelValue( modelRef ) ) )
 			end
@@ -132,7 +132,7 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 
 	--战术装备的按键文本
 	self.TacticalPromptText = LUI.UIText.new()
-	self.TacticalPromptText:setLeftRight( false, true, -286.5, -89.5)
+	self.TacticalPromptText:setLeftRight( false, true, -287.5, -90.5)
 	self.TacticalPromptText:setTopBottom( false, true, -33, -15.5 )
 	self.TacticalPromptText:setTTF( "fonts/Scout.ttf" )
 	self.TacticalPromptText:setRGB( 0.5, 0.5, 0.5 )
@@ -227,8 +227,8 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 
 	--专家武器按键背景
 	self.SpecialPromptTextBG = LUI.UIImage.new()
-	self.SpecialPromptTextBG:setLeftRight( false, true, -81.5, -45.5 )
-	self.SpecialPromptTextBG:setTopBottom( false, true, -149, -113 )
+	self.SpecialPromptTextBG:setLeftRight( false, true, -84.5, -48.5 )
+	self.SpecialPromptTextBG:setTopBottom( false, true, -144, -108 )
 	self.SpecialPromptTextBG:setImage( RegisterImage( "ui_icon_key_prompt_bg") )
 	self.SpecialPromptTextBG:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	self.SpecialPromptTextBG:setScale( 0.65 )
@@ -238,8 +238,8 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 	
 	--专家武器按键文本
 	self.SpecialPromptText = LUI.UIText.new()
-	self.SpecialPromptText:setLeftRight( false, true, -140.4, 6.6 )
-	self.SpecialPromptText:setTopBottom( false, true, -143.3, -125.8 )
+	self.SpecialPromptText:setLeftRight( false, true, -140.1, 6.9 )
+	self.SpecialPromptText:setTopBottom( false, true, -134, -116.5 )
 	self.SpecialPromptText:setTTF( "fonts/Scout.ttf" )
 	self.SpecialPromptText:setRGB( 0.5, 0.5, 0.5 )
 	self.SpecialPromptText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
@@ -276,7 +276,7 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 	self.SpecialMeter = LUI.UIImage.new()
 	self.SpecialMeter:setLeftRight( false, true, -102, -32 )
 	self.SpecialMeter:setTopBottom( false, true, -215.5, -145.5 )
-	self.SpecialMeter:setImage( RegisterImage( "t8_hud_hero_weapon_progress" ) )
+	self.SpecialMeter:setImage( RegisterImage( "ui_icon_hero_weapon_progress" ) )
 	self.SpecialMeter:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_clock_normal" ) )
 	--self.SpecialMeter:setZRot( 90 )
 	self.SpecialMeter:setShaderVector( 0, 1, 0, 0, 0 )
@@ -298,12 +298,13 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 	--地雷图标
 	--TODO:要求在玩家没有购买地雷时，不显示图标，购买了地雷且数量不为0，显示图标不透明度为1，购买了地雷且数量为0，显示图标不透明度为0.6
 	self.DpadIconMine = LUI.UIImage.new()
-	self.DpadIconMine:setLeftRight( false, true, -115, -87 )
+	self.DpadIconMine:setLeftRight( false, true, -130, -102 )
 	self.DpadIconMine:setTopBottom( false, true, -60.5, -37 )
 	self.DpadIconMine:setImage( RegisterImage( "blacktransparent" ) )
+	self.DpadIconMine:setScale( 1.3 )
 	self.DpadIconMine:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.actionSlot3ammo" ), function ( modelRef )
 		if Engine.GetModelValue( modelRef ) then
-			self.DpadIconMine:setImage( RegisterImage( "ui_icon_tripmine" ) )
+			self.DpadIconMine:setImage( RegisterImage( "ui_icon_claymore" ) )
 		else
 			self.DpadIconMine:setImage( RegisterImage( "blacktransparent" ) )
 		end
@@ -312,7 +313,7 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 
 	--地雷数量文本
 	self.DpadIconMineCountText = LUI.UIText.new()
-	self.DpadIconMineCountText:setLeftRight( false, true, -111, -91.5 )
+	self.DpadIconMineCountText:setLeftRight( false, true, -125, -105.5 )
 	self.DpadIconMineCountText:setTopBottom( false, true, -85.5, -73 )
 	self.DpadIconMineCountText:setText( Engine.Localize( "0" ) )
 	self.DpadIconMineCountText:setTTF( "fonts/Scout.ttf" )
@@ -334,7 +335,7 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 
 	--地雷按键字母背景
 	self.DpadIconMinePromptBG = LUI.UIImage.new()
-	self.DpadIconMinePromptBG:setLeftRight( false, true, -122, -86 )
+	self.DpadIconMinePromptBG:setLeftRight( false, true, -134, -98 )
 	self.DpadIconMinePromptBG:setTopBottom( false, true, -43, -7 )
 	self.DpadIconMinePromptBG:setImage( RegisterImage( "ui_icon_key_prompt_bg" ) )
 	self.DpadIconMinePromptBG:setScale( 0.65 )
@@ -342,8 +343,8 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 
 	--地雷按键文本
 	self.DpadIconMinePromptText = LUI.UIText.new()
-	self.DpadIconMinePromptText:setLeftRight(false,true, -202, -5) 
-	self.DpadIconMinePromptText:setTopBottom(false,true, -33, -15.5)
+	self.DpadIconMinePromptText:setLeftRight(false,true, -214, -17 ) 
+	self.DpadIconMinePromptText:setTopBottom(false,true, -33, -15.5 )
 	self.DpadIconMinePromptText:setTTF( "fonts/Scout.ttf" )
 	self.DpadIconMinePromptText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	self.DpadIconMinePromptText:setText( "[{+actionslot 4}]" )
@@ -352,13 +353,13 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 	self:addElement( self.DpadIconMinePromptText )
 
 	self.ShieldImage = LUI.UIImage.new()
-	self.ShieldImage:setLeftRight( false, true, -162, -108.5 )
-	self.ShieldImage:setTopBottom( false, true, -77, -23 )
+	self.ShieldImage:setLeftRight( false, true, -179, -125.5 )
+	self.ShieldImage:setTopBottom( false, true, -79, -25 )
 	self.ShieldImage:setImage( RegisterImage( "blacktransparent" ) )
 	self.ShieldImage:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.showDpadDown" ), function ( modelRef )
 		if Engine.GetModelValue( modelRef ) == 1 then
-			self.ShieldImage:setImage( RegisterImage( "ui_icon_riotshield" ) )
-			self.ShieldImage:setScale(0.5)
+			self.ShieldImage:setImage( RegisterImage( "ui_icon_vest" ) )
+			self.ShieldImage:setScale( 0.75 )
 		else
 			self.ShieldImage:setImage( RegisterImage( "blacktransparent" ) )
 		end
@@ -366,8 +367,8 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 	self:addElement( self.ShieldImage )
 
 	self.ShieldMeter = LUI.UIImage.new()
-	self.ShieldMeter:setLeftRight( false, true, -155, -91.5 )
-	self.ShieldMeter:setTopBottom( false, true, -60, -43 )
+	self.ShieldMeter:setLeftRight( false, true, -160, -116 )
+	self.ShieldMeter:setTopBottom( false, true, -53, -49 )
 	self.ShieldMeter:setImage( RegisterImage( "blacktransparent" ) )
 	self.ShieldMeter:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_wipe" ) )
 	self.ShieldMeter:setShaderVector( 1, 0, 0, 0, 0 )
@@ -375,9 +376,9 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 	self.ShieldMeter:setShaderVector( 3, 0, 0, 0, 0 )
 	self.ShieldMeter:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.showDpadDown" ), function ( modelRef )
 		if Engine.GetModelValue( modelRef ) == 1 then
-			self.ShieldMeter:setImage( RegisterImage( "ui_icon_riotshield_health_bar" ) )
+			self.ShieldMeter:setImage( RegisterImage( "ui_icon_vest_health_bar" ) )
 			self.ShieldMeter:setZRot( 90 )
-			self.ShieldMeter:setScale( 0.6 )
+			self.ShieldMeter:setScale( 0.5 )
 		else
 			self.ShieldMeter:setImage( RegisterImage( "blacktransparent" ) )
 		end
@@ -398,7 +399,7 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 
 	--盾牌按键字母背景
 	self.ShieldPromptBG = LUI.UIImage.new()
-	self.ShieldPromptBG:setLeftRight( false, true, -148, -112 )
+	self.ShieldPromptBG:setLeftRight( false, true, -168, -132 )
 	self.ShieldPromptBG:setTopBottom( false, true, -43, -7 )
 	self.ShieldPromptBG:setImage( RegisterImage( "ui_icon_key_prompt_bg" ) )
 	self.ShieldPromptBG:setScale( 0.65 )
@@ -406,7 +407,7 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 
 	--盾牌按键文本
 	self.ShieldPrompt = LUI.UIText.new()
-	self.ShieldPrompt:setLeftRight( false, true, -234, -37 )
+	self.ShieldPrompt:setLeftRight( false, true, -249.5, -52.5 )
 	self.ShieldPrompt:setTopBottom( false, true, -33, -15.5 )
 	self.ShieldPrompt:setTTF( "fonts/Scout.ttf" )
 	self.ShieldPrompt:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
@@ -427,19 +428,18 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 			Engine.SetDvar( "underBarrel", tonumber( underBarrel ) )
 			
 			if      tonumber( underBarrel ) == 0 then
-				self.DpadIconUnderBRIcon:setImage(RegisterImage("blacktransparent")) 
-				self.DpadIconUnderBRIcon:setAlpha( 0 )
+				self.DpadIconUnderBRIcon:setImage(RegisterImage( "blacktransparent" ) ) 
 			elseif  tonumber( underBarrel ) == 1 then --scar-h
-				self.DpadIconUnderBRIcon:setImage(RegisterImage("ui_icon_semtex")) 
+				self.DpadIconUnderBRIcon:setImage(RegisterImage( "ui_icon_semtex") ) 
 			elseif  tonumber( underBarrel ) == 2 then --ak47
-				self.DpadIconUnderBRIcon:setImage(RegisterImage("ui_icon_semtex")) 
+				self.DpadIconUnderBRIcon:setImage(RegisterImage( "ui_icon_semtex" ) ) 
 			elseif  tonumber( underBarrel ) == 3 then --fal
-				self.DpadIconUnderBRIcon:setImage(RegisterImage("ui_icon_semtex")) 
+				self.DpadIconUnderBRIcon:setImage(RegisterImage( "ui_icon_semtex" ) ) 
 			else				
-				self.DpadIconUnderBRIcon:setImage(RegisterImage("blacktransparent"))
+				self.DpadIconUnderBRIcon:setImage(RegisterImage( "blacktransparent" ) )
 			end
 		else
-			self.DpadIconUnderBRIcon:setImage(RegisterImage("blacktransparent"))
+			self.DpadIconUnderBRIcon:setImage(RegisterImage( "blacktransparent" ) )
 		end	
 	end )
 	
@@ -447,7 +447,7 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 
 	--下挂装备数量文本
 	self.DpadIconUnderBRCountText = LUI.UIText.new()
-	self.DpadIconUnderBRCountText:setLeftRight( false, true, -78, -58.5 )
+	self.DpadIconUnderBRCountText:setLeftRight( false, true, -86, -76.5 )
 	self.DpadIconUnderBRCountText:setTopBottom( false, true, -85.5, -73 )
 	self.DpadIconUnderBRCountText:setText( Engine.Localize( "0" ) )
 	self.DpadIconUnderBRCountText:setTTF( "fonts/Scout.ttf" )
@@ -467,7 +467,7 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 
 	--下挂按键字母背景
 	self.DpadIconUnderBRPromptBG = LUI.UIImage.new()
-	self.DpadIconUnderBRPromptBG:setLeftRight( false, true, -90, -54 )
+	self.DpadIconUnderBRPromptBG:setLeftRight( false, true, -100, -64 )
 	self.DpadIconUnderBRPromptBG:setTopBottom( false, true, -43, -7 )
 	self.DpadIconUnderBRPromptBG:setImage( RegisterImage( "ui_icon_key_prompt_bg" ) )
 	self.DpadIconUnderBRPromptBG:setScale( 0.65 )
@@ -475,7 +475,7 @@ CoD.AmmoEquipment.new = function ( menu, controller )
 
 	--下挂装备按键文本
 	self.DpadIconUnderBRPromptText = LUI.UIText.new()
-	self.DpadIconUnderBRPromptText:setLeftRight( false, true, -169, 28 )
+	self.DpadIconUnderBRPromptText:setLeftRight( false, true, -180, 17 )
 	self.DpadIconUnderBRPromptText:setTopBottom( false, true, -33, -15.5 )
 	self.DpadIconUnderBRPromptText:setTTF( "fonts/Scout.ttf" )
 	self.DpadIconUnderBRPromptText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
