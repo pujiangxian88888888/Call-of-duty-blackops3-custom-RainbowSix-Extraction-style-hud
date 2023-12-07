@@ -29,7 +29,7 @@ CoD.SelfScore.new = function ( menu, controller )
 	self.ZoneText:setText( Engine.Localize( "" ) )
 	self.ZoneText:setTTF( "fonts/Erbaum_Bold.ttf" )
 	self.ZoneText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
-	self.ZoneText:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "t8_zone_name" ), function ( modelRef )
+	self.ZoneText:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "zone_name" ), function ( modelRef )
 		if Engine.GetModelValue( modelRef ) then
 			if Engine.GetModelValue( modelRef ) == "none" then
 				self.ZoneText:setText( Engine.Localize( "Unknown" ) )
